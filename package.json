@@ -1,0 +1,17 @@
+{
+  "name": "coursesapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "abdelbasset sadok",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.3.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
