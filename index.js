@@ -28,4 +28,36 @@ async function getCourse() {
     .select({ name: 1, tags: 1 });
   console.log(courses);
 }
-getCourse();
+async function updateCourse(id) {
+  const course = await Course.findById(id);
+  if (!course) return;
+  console.log("result");
+
+  //course.isPublished = true;
+  //course.author = "yassmina sadok";
+  course.set({
+    isPublished: true,
+    author: "yassmina sadok",
+  });
+  const result = await course.save();
+  console.log(result);
+}
+
+async function updateCourseWithoutRetrieveItFirst(id) {
+  const course = await Course.findByIdAndUpdate(
+    id,
+    {
+      //mongodb operator facebook like $inc
+      $set: {
+        author: "yassmine ",
+      },
+    },
+    { new: true } //send the new updated object
+  );
+  console.log(course);
+}
+async function removeCourse(id) {
+  const course = await Course.findByIdAndRemove(id);
+  console.log(course);
+}
+removeCourse("625f52d864ecbc3de41283f1");
